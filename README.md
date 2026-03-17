@@ -1,5 +1,6 @@
-##Live Demo 
-https://flowmind-ai-puce.vercel.app/
+## 🚀 Live Demo
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green?style=for-the-badge)](https://flowmind-ai-puce.vercel.app/)
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
