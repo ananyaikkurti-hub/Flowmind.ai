@@ -1,3 +1,5 @@
+import { generateAI } from "@/lib/gemini";
+
 export async function POST(req: Request) {
   try {
     const { text } = await req.json();
@@ -6,21 +8,22 @@ export async function POST(req: Request) {
       return Response.json({ result: "Please enter meeting notes." });
     }
 
-    const summary = `
-Summary:
-The team discussed project progress.
+    const prompt = `
+You are a productivity assistant. Analyze the following meeting notes and return:
 
-Tasks:
-• Ananya – UI Design
-• Rahul – Backend Integration
+1. A concise Summary
+2. A list of Tasks with the person responsible
+3. Any Deadlines mentioned
 
-Deadline:
-Next Friday
+Meeting Notes:
+${text}
 `;
 
-    return Response.json({ result: summary });
+    const result = await generateAI(prompt);
+    return Response.json({ result });
 
   } catch (error) {
-    return Response.json({ result: "Server error." });
+    console.error("Gemini error:", error);
+    return Response.json({ result: "Server error. Check your API key or Gemini quota." });
   }
 }
