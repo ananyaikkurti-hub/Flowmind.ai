@@ -9,13 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@google/generative-ai": "^0.24.1",
-=======
->>>>>>> 91dc967dbc200beeb9a89ad1dcdfe38427fcb5ad
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "groq-sdk": "^1.1.1",
     "lucide-react": "^0.577.0",
     "next": "16.1.6",
     "radix-ui": "^1.4.3",
