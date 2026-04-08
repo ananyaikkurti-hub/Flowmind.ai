@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+## 🚀 Live Demo
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green?style=for-the-badge)](https://flowmind-ai-puce.vercel.app/)
+
+>>>>>>> 91dc967dbc200beeb9a89ad1dcdfe38427fcb5ad
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
