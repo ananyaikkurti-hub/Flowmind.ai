@@ -1,16 +1,16 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
-
-const genAI = new GoogleGenerativeAI(
-  process.env.GEMINI_API_KEY as string
-);
-
 export async function generateAI(prompt: string) {
-  const model = genAI.getGenerativeModel({
-    model: "gemini-2.0-flash",
-  }, { apiVersion: "v1" });
+  const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "mistralai/mistral-7b-instruct:free",
+      messages: [{ role: "user", content: prompt }],
+    }),
+  });
 
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-
-  return response.text();
+  const data = await response.json();
+  return data.choices[0].message.content;
 }
