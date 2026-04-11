@@ -12,5 +12,11 @@ export async function generateAI(prompt: string) {
   });
 
   const data = await response.json();
+  console.log("OpenRouter response:", JSON.stringify(data));
+  
+  if (!data.choices || !data.choices[0]) {
+    return "Error from OpenRouter: " + JSON.stringify(data);
+  }
+  
   return data.choices[0].message.content;
 }
